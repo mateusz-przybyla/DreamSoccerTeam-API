@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
+const masterKey = "XXXXXX";
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -70,6 +71,37 @@ app.patch("/players/:id", (req, res) => {
 
   console.log(players[searchIndex]);
   res.json(replacementPlayer);
+});
+
+//7. DELETE a specific player
+
+app.delete("/players/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const searchIndex = players.findIndex((player) => player.id === id);
+
+  if (searchIndex > -1) {
+    players.splice(searchIndex, 1);
+    res.sendStatus(200);
+  } else {
+    res.status(404).json({
+      error: `Player with id: ${id} not found. No players were deleted.`,
+    });
+  }
+});
+
+//8. DELETE all players
+
+app.delete("/all", (req, res) => {
+  const userKey = req.query.key;
+
+  if (userKey === masterKey) {
+    players = [];
+    res.sendStatus(200);
+  } else {
+    res
+      .status(404)
+      .json({ error: `You are not authorised to perform this action.` });
+  }
 });
 
 app.listen(port, () => {
