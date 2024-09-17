@@ -1,7 +1,10 @@
 import express from "express";
+import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //1. GET a random player
 
@@ -32,6 +35,21 @@ app.get("/filter", (req, res) => {
     (player) => player.playerTeam === team
   );
   res.json(foundPlayersByTeam);
+});
+
+//5. POST a new player
+
+app.post("/players", (req, res) => {
+  const newPlayer = {
+    id: players.length + 1,
+    playerName: req.body.name,
+    playerTeam: req.body.team,
+    playerPosition: req.body.position,
+  };
+
+  players.push(newPlayer);
+  console.log(players.slice(-1));
+  res.json(newPlayer);
 });
 
 app.listen(port, () => {
