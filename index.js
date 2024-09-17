@@ -52,6 +52,26 @@ app.post("/players", (req, res) => {
   res.json(newPlayer);
 });
 
+//6. PATCH a player
+
+app.patch("/players/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const existingPlayer = players.find((player) => id === player.id);
+
+  const replacementPlayer = {
+    id: id,
+    playerName: req.body.name || existingPlayer.playerName,
+    playerTeam: req.body.team || existingPlayer.playerTeam,
+    playerPosition: req.body.position || existingPlayer.playerPosition,
+  };
+
+  const searchIndex = players.findIndex((player) => id === player.id);
+  players[searchIndex] = replacementPlayer;
+
+  console.log(players[searchIndex]);
+  res.json(replacementPlayer);
+});
+
 app.listen(port, () => {
   console.log(`Successfully started server on port ${port}.`);
 });
