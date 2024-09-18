@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 
 const app = express();
-const port = 3000;
+const port = 4000;
 const masterKey = "XXXXXX";
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -107,6 +107,8 @@ app.delete("/all", (req, res) => {
 app.listen(port, () => {
   console.log(`Successfully started server on port ${port}.`);
 });
+
+// In-memory data store
 
 var players = [
   {
