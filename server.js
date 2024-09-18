@@ -10,7 +10,7 @@ app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Route to render the main page
+// Route to render the main page with players list
 app.get("/", async (req, res) => {
   try {
     const response = await axios.get(`${API_URL}/all`);
