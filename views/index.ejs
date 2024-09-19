@@ -16,7 +16,7 @@
 
   <body>
     <div class="container">
-      <h1>Soccer player profiles</h1>
+      <h1>Dream soccer team</h1>
       <hr />
       <a id="newPostBtn" href="/new">New player</a>
       <ul>
@@ -25,6 +25,7 @@
           <h2><%=player.playerName%></h2>
           <p><span>Team: </span><%=player.playerTeam %></p>
           <p><span>Position: </span><%=player.playerPosition%></p>
+          <a class="edit" href="/edit/<%= player.id %>">Edit</a>
         </li>
         <% }); %>
       </ul>

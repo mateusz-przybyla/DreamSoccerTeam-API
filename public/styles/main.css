@@ -51,6 +51,8 @@ ul {
 li {
   margin-bottom: 10px;
   margin-left: 30%;
+
+  border: 1px solid #9e2525;
 }
 
 span {
@@ -107,13 +109,18 @@ button {
   transition: background-color 0.3s;
 }
 
+a.edit {
+  background-color: #007bff;
+  /* margin-right: 10px; */
+}
+
 button.full-width {
   display: block;
   text-align: center;
   width: 100%;
 }
 
-a,
+a:hover,
 button:hover {
   background-color: #0056b3;
 }
