@@ -6,7 +6,6 @@ ul,
 li,
 form,
 input,
-textarea,
 a {
   margin: 0;
   padding: 0;
@@ -15,15 +14,14 @@ a {
 }
 
 body {
-  background-color: #f7f9fc;
-  color: #333;
+  background-color: #00712d;
   line-height: 1.6;
 }
 
 .container {
   max-width: 400px;
   margin: 50px auto;
-  background-color: #fff;
+  background-color: #fffbe6;
   padding: 20px 40px;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -32,6 +30,8 @@ body {
 h1 {
   font-size: 2.5em;
   color: #444;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -58,7 +58,7 @@ span {
 }
 
 hr {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 #newPostBtn {
@@ -76,4 +76,44 @@ hr {
 
 #newPostBtn:hover {
   background-color: #27ae60;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9em;
+  outline: none;
+  transition: border 0.3s;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #007bff;
+}
+
+a,
+button {
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.full-width {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+a,
+button:hover {
+  background-color: #0056b3;
 }

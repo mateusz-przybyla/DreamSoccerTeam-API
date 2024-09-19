@@ -5,7 +5,10 @@ const app = express();
 const port = 4000;
 const masterKey = "XXXXXX";
 
+//Middleware
+
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 //1. GET a random player
 
@@ -50,7 +53,7 @@ app.post("/players", (req, res) => {
 
   players.push(newPlayer);
   console.log(players.slice(-1));
-  res.json(newPlayer);
+  res.status(201).json(newPlayer);
 });
 
 //6. PATCH a player
