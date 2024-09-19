@@ -77,6 +77,17 @@ app.post("/api/players/:id", async (req, res) => {
   }
 });
 
+// Delete a player profile
+
+app.get("/api/players/delete/:id", async (req, res) => {
+  try {
+    await axios.delete(`${API_URL}/players/${req.params.id}`);
+    res.redirect("/");
+  } catch (error) {
+    res.status(500).json({ message: "Error deleting player profile." });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Backend server is running on http://localhost:${port}`);
 });

@@ -124,3 +124,11 @@ a:hover,
 button:hover {
   background-color: #0056b3;
 }
+
+a.delete {
+  background-color: #e74c3c;
+}
+
+a.delete:hover {
+  background-color: #c0392b;
+}
