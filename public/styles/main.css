@@ -46,6 +46,7 @@ p {
 ul {
   list-style: none;
   margin-top: 20px;
+  box-sizing: border-box;
 }
 
 li {
@@ -66,7 +67,9 @@ hr {
   margin-bottom: 20px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="date"],
+input[type="number"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
