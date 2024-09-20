@@ -27,6 +27,18 @@
           name="position"
           value="<%=player.playerPosition %>"
         />
+        <input
+          type="number"
+          name="age"
+          min="0"
+          step="1"
+          value="<%=player.age %>"
+        />
+        <input
+          type="text"
+          name="marketValue"
+          value="<%=player.marketValue %>"
+        />
         <button class="full-width" type="submit"><%= submit %></button>
       </form>
       <% } else {%>
@@ -34,6 +46,20 @@
         <input type="text" name="name" placeholder="Name" required />
         <input type="text" name="team" placeholder="Team" required />
         <input type="text" name="position" placeholder="Position" required />
+        <input
+          type="number"
+          name="age"
+          min="0"
+          step="1"
+          placeholder="Age"
+          required
+        />
+        <input
+          type="text"
+          name="marketValue"
+          placeholder="Market value"
+          required
+        />
         <button class="full-width" type="submit"><%= submit %></button>
       </form>
       <% } %>

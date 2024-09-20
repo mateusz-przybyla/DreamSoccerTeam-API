@@ -49,6 +49,8 @@ app.post("/players", (req, res) => {
     playerName: req.body.name,
     playerTeam: req.body.team,
     playerPosition: req.body.position,
+    age: req.body.age,
+    marketValue: req.body.marketValue,
   };
 
   players.push(newPlayer);
@@ -67,6 +69,8 @@ app.patch("/players/:id", (req, res) => {
     playerName: req.body.name || existingPlayer.playerName,
     playerTeam: req.body.team || existingPlayer.playerTeam,
     playerPosition: req.body.position || existingPlayer.playerPosition,
+    age: req.body.age || existingPlayer.age,
+    marketValue: req.body.marketValue || existingPlayer.marketValue,
   };
 
   const searchIndex = players.findIndex((player) => id === player.id);
@@ -119,17 +123,29 @@ var players = [
     playerName: "Kylian Mbappe",
     playerTeam: "Real Madrid",
     playerPosition: "forward",
+    age: 25,
+    marketValue: "€196.6m",
   },
   {
     id: 2,
     playerName: "Cristiano Ronaldo",
     playerTeam: "Al Nassr",
     playerPosition: "forward",
+    age: 39,
+    marketValue: "€15.1m",
   },
   {
     id: 3,
     playerName: "Lionel Messi",
     playerTeam: "Inter Miami",
     playerPosition: "forward",
+    age: 37,
+    marketValue: "€34.0m",
   },
 ];
+
+function calculateAge(data) {
+  var today = new Date();
+  var birthDate = new Date(data);
+  return Math.round(Math.abs((today - birthDate) / 86400000 / 365));
+}
