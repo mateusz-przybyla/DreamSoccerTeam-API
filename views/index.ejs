@@ -18,17 +18,21 @@
     <div class="container">
       <h1>Dream soccer team</h1>
       <hr />
-      <a id="newPostBtn" href="/new">New player</a>
+      <a class="add" href="/new">New player</a>
       <ul>
         <% players.forEach(player=> { %>
         <li>
-          <h2><%=player.playerName%></h2>
-          <p><span>Team: </span><%=player.playerTeam %></p>
-          <p><span>Position: </span><%=player.playerPosition%></p>
-          <a class="edit" href="/edit/<%= player.id %>">Edit</a>
-          <a class="delete" href="/api/players/delete/<%= player.id %>"
-            >Delete</a
-          >
+          <div>
+            <h2><%=player.playerName%></h2>
+            <p><span>Team: </span><%=player.playerTeam %></p>
+            <p><span>Position: </span><%=player.playerPosition%></p>
+          </div>
+          <div>
+            <a class="edit" href="/edit/<%= player.id %>">Edit</a>
+            <a class="delete" href="/api/players/delete/<%= player.id %>"
+              >Delete</a
+            >
+          </div>
         </li>
         <% }); %>
       </ul>
