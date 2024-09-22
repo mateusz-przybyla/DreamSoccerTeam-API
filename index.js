@@ -31,7 +31,7 @@ app.get("/players/:id", (req, res) => {
   res.json(foundPlayer);
 });
 
-//4. GET a players by filtering on the player position
+//4. GET a players by filtering on the player team
 
 app.get("/filter", (req, res) => {
   const team = req.query.team;
@@ -143,9 +143,10 @@ var players = [
     marketValue: "€34.0m",
   },
 ];
-
+/*
 function calculateAge(data) {
   var today = new Date();
   var birthDate = new Date(data);
   return Math.round(Math.abs((today - birthDate) / 86400000 / 365));
 }
+*/
