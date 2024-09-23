@@ -1,6 +1,21 @@
 # DreamSoccerTeam-API
 
-[in progress]
+I present my own API with backend and simple frontend to communicate with an API.
+
+An API allows to build a soccer team and store a basic information about players (name, team, position, market value).
+
+An app consists of two servers (operating simultaneously):
+
+- port 3000, app backend -> makes API requests,
+- port 4000, API backend -> my API responds.
+
+There is no connection to the real database, data are stored in an array (in memory data store).
+
+A REST API approach:
+
+- use CRUD operations to perform the most common tasks of data management,
+- generate JSON output,
+- use status code in error handling.
 
 ## Table of contents
 
